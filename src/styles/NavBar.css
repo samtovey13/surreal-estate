@@ -13,6 +13,22 @@
 
 .navbar-links-item {
   margin: 0;
-  padding: 10px 20px;
+  padding: 20px;
   display: inline-block;
+}
+
+.navbar-links-item a {
+  color: black;
+}
+
+.navbar-links-item a:link {
+  text-decoration: none;
+}
+
+.navbar-links-item a:visited {
+  text-decoration: none;
+}
+
+.navbar-links-item a:active {
+  text-decoration: none;
 }
