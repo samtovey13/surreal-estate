@@ -22,7 +22,6 @@ const AddProperty = () => {
   };
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
-  const [hasBeenSubmitted, setSubmitted] = useState(initialState.hasBeenSubmitted);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,15 +34,14 @@ const AddProperty = () => {
       setAlert({
         message: "Success! Property added.",
         isSuccess: true,
-      })
+      });
     } else {
       setAlert({
         message: "Oops! Something went wrong. Property couldn't be added.",
         isSuccess: false,
-      })
-    };
-    setSubmitted(true);
-  };
+      });
+    }
+  };;
 
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
@@ -51,7 +49,9 @@ const AddProperty = () => {
 
   return (
     <div className="add-property">
-      <Alert message={alert.message} success={alert.isSuccess} submitted={hasBeenSubmitted}/>
+      {alert.message && (
+        <Alert message={alert.message} success={alert.isSuccess} />
+      )}
       <form onSubmit={handleSubmit}>
         <ul className="form-ul">
           <li>
