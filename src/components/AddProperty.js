@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 import createProperty from '../requests/createProperty';
+import Alert from "./Alert";
 
 const AddProperty = () => {
   const initialState = {
@@ -13,19 +14,44 @@ const AddProperty = () => {
       city: "Manchester",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
+    hasBeenSubmitted: false
   };
   const [fields, setFields] = useState(initialState.fields);
-  const handleSubmit = (event) => {
+  const [alert, setAlert] = useState(initialState.alert);
+  const [hasBeenSubmitted, setSubmitted] = useState(initialState.hasBeenSubmitted);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    createProperty(fields);
-    console.log(fields);
+    setAlert({
+      message: "",
+      isSuccess: false,
+    });
+    const res = await createProperty(fields);
+    if (res.status === 201) {
+      setAlert({
+        message: "Success! Property added.",
+        isSuccess: true,
+      })
+    } else {
+      setAlert({
+        message: "Oops! Something went wrong. Property couldn't be added.",
+        isSuccess: false,
+      })
+    };
+    setSubmitted(true);
   };
+
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
 
   return (
     <div className="add-property">
+      <Alert message={alert.message} success={alert.isSuccess} submitted={hasBeenSubmitted}/>
       <form onSubmit={handleSubmit}>
         <ul className="form-ul">
           <li>
@@ -125,7 +151,9 @@ const AddProperty = () => {
             />
           </li>
           <li>
-            <button className="add-property-button" type="submit">Add Property</button>
+            <button className="add-property-button" type="submit">
+              Add Property
+            </button>
           </li>
         </ul>
       </form>
