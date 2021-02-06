@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/AddProperty.css";
+import createProperty from '../requests/createProperty';
 
 const AddProperty = () => {
   const initialState = {
@@ -16,15 +17,12 @@ const AddProperty = () => {
   const [fields, setFields] = useState(initialState.fields);
   const handleSubmit = (event) => {
     event.preventDefault();
+    createProperty(fields);
     console.log(fields);
   };
   const handleFieldChange = (event) => {
     setFields({ ...fields, [event.target.name]: event.target.value });
   };
-
-  useEffect(() => {
-    console.log(fields);
-  }, [fields])
 
   return (
     <div className="add-property">
