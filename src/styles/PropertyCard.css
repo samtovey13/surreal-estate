@@ -1,0 +1,40 @@
+.property-card {
+  width: 100%;
+  border: 3px solid thistle;
+  box-sizing: border-box;
+  padding: 30px;
+  margin: 0;
+  border-radius: 4px;
+}
+
+h4 {
+  margin: 0 0 20px 0;
+}
+
+.property-card > div {
+  padding: 5px 10px;
+}
+
+.prop-card-email {
+  background-color: rgb(101, 45, 101);
+  width: 100%;
+  margin: 20px 0 0 0;
+  padding: 10px 0;
+  text-align: center;
+  color: whitesmoke;
+  border-radius: 4px;
+}
+
+a:link, a:visited {
+  color:whitesmoke !important;
+  text-decoration: none;
+}
+
+.prop-card-email:hover {
+  background-color:rgb(51, 51, 51);
+  font-weight: 800;
+}
+
+svg {
+  margin-right: 10px;
+}
