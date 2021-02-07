@@ -19,7 +19,7 @@ function App() {
       email: "",
     },
     alert: {
-      message: "",
+      message: "bjdskbjfs",
       isSuccess: false,
     },
   };
@@ -58,14 +58,16 @@ function App() {
           <Properties />
         </Route>
         <Route exact path="/add-property">
-          {alert.message && (
-            <Alert message={alert.message} success={alert.isSuccess} />
-          )}
-          <AddProperty
-            fields={fields}
-            handleFieldChange={handleFieldChange}
-            handleSubmit={handleAddProperty}
-          />
+          <div className="add-property-container">
+            {alert.message && (
+              <Alert message={alert.message} success={alert.isSuccess} />
+            )}
+            <AddProperty
+              fields={fields}
+              handleFieldChange={handleFieldChange}
+              handleSubmit={handleAddProperty}
+            />
+          </div>
         </Route>
       </Switch>
     </div>

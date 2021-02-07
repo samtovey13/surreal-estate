@@ -6,14 +6,16 @@ const Alert = ({ message, success }) => {
   const red = { text: "#de0000", border: "#ffc2c2" };
   const color = success ? green : red;
   return (
-    <div
-      className="alert"
-      style={{
-        color: color.text,
-        borderColor: color.border,
-      }}
-    >
-      {message}
+    <div className="alert-container">
+      <div
+        className="alert"
+        style={{
+          color: color.text,
+          borderColor: color.border,
+        }}
+      >
+        {message}
+      </div>
     </div>
   );
 };
