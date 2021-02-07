@@ -9,6 +9,7 @@ const Alert = ({ message, success }) => {
     <div className="alert-container">
       <div
         className="alert"
+        data-testid="alert"
         style={{
           color: color.text,
           borderColor: color.border,

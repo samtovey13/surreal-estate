@@ -8,16 +8,6 @@ exports[`AddProperty renders correctly 1`] = `
     <div
       class="add-property"
     >
-      <div
-        class="alert-container"
-      >
-        <div
-          class="alert"
-          style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
-        >
-          testing error/success message
-        </div>
-      </div>
       <form
         data-testid="add-property-form"
       >

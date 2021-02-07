@@ -17,7 +17,7 @@ const AddProperty = () => {
       email: "",
     },
     alert: {
-      message: "testing error/success message",
+      message: "",
       isSuccess: false,
     },
   };
@@ -34,33 +34,40 @@ const AddProperty = () => {
       message: "",
       isSuccess: false,
     });
-    const res = await createProperty(fields);
-    if (res.status === 201) {
-      setAlert({
-        message: "Success! Property added.",
-        isSuccess: true,
-      });
-    } else {
+    try {
+      const res = await createProperty(fields);
+      if (res.status === 201) {
+        setAlert({
+          message: "Success! Property added.",
+          isSuccess: true,
+        });
+      } else {
+        setAlert({
+          message: "Oops! Something went wrong. Property couldn't be added.",
+          isSuccess: false,
+        });
+      }
+    } catch (err) {
       setAlert({
         message: "Oops! Something went wrong. Property couldn't be added.",
         isSuccess: false,
       });
     }
   };
-    
+
   return (
     <div className="add-property-container">
-
-    <div className="add-property">
-      {alert.message && (
-        <Alert message={alert.message} success={alert.isSuccess} />
-      )}
-      <AddPropertyForm
-        fields={fields}
-        handleFieldChange={handleFieldChange}
-        handleSubmit={handleAddProperty}
-      />
-    </div></div>
+      <div className="add-property">
+        {alert.message && (
+          <Alert message={alert.message} success={alert.isSuccess} />
+        )}
+        <AddPropertyForm
+          fields={fields}
+          handleFieldChange={handleFieldChange}
+          handleSubmit={handleAddProperty}
+        />
+      </div>
+    </div>
   );
 };
 
