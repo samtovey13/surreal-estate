@@ -6,6 +6,9 @@ const Alert = ({ message, success }) => {
   const green = { text: "#007a33", border: "#d3edd9" };
   const red = { text: "#de0000", border: "#ffc2c2" };
   const color = success ? green : red;
+
+  if (!message) return null;
+  
   return (
     <div className="alert-container">
       <div

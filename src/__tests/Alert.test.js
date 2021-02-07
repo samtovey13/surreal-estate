@@ -21,11 +21,11 @@ describe("Alert", () => {
   });
 
   it("does not render a message when message is empty", () => {
-    const { asFragment, queryByText } = render(
+    const { asFragment, queryByTestId } = render(
       <Alert message="" success={false} />
     );
 
     expect(asFragment()).toMatchSnapshot();
-    expect(queryByText("Error message")).not.toBeInTheDocument();
+    expect(queryByTestId("alert")).not.toBeInTheDocument();
   });
 });

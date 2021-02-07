@@ -58,9 +58,7 @@ const AddProperty = () => {
   return (
     <div className="add-property-container">
       <div className="add-property">
-        {alert.message && (
-          <Alert message={alert.message} success={alert.isSuccess} />
-        )}
+        <Alert message={alert.message} success={alert.isSuccess} />
         <AddPropertyForm
           fields={fields}
           handleFieldChange={handleFieldChange}
