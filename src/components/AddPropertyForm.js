@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/AddPropertyForm.css';
+import PropTypes from "prop-types";
 
 const AddPropertyForm = ({ fields, handleFieldChange, handleSubmit }) => {
   return (
@@ -110,5 +111,19 @@ const AddPropertyForm = ({ fields, handleFieldChange, handleSubmit }) => {
     </form>
   );
 };
+
+AddPropertyForm.propTypes = {
+  fields: PropTypes.shape({
+    title: PropTypes.string,
+    type: PropTypes.string,
+    bedrooms: PropTypes.string,
+    bathrooms: PropTypes.string,
+    price: PropTypes.string,
+    city: PropTypes.string,
+    email: PropTypes.string,
+  }),
+  handleFieldChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
+}.isRequired;
 
 export default AddPropertyForm;

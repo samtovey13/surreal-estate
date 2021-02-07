@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Alert.css";
+import PropTypes from "prop-types";
 
 const Alert = ({ message, success }) => {
   const green = { text: "#007a33", border: "#d3edd9" };
@@ -19,6 +20,11 @@ const Alert = ({ message, success }) => {
       </div>
     </div>
   );
+};
+
+Alert.propTypes = {
+  message: PropTypes.string.isRequired,
+  success: PropTypes.bool,
 };
 
 export default Alert;
