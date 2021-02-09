@@ -35,16 +35,7 @@ const Properties = () => {
       {properties && (
         <div className="properties-grid">
           {properties.map((property) => (
-              <PropertyCard
-                key={property._id}
-                title={property.title}
-                type={property.type}
-                bedrooms={property.bedrooms}
-                bathrooms={property.bathrooms}
-                price={property.price}
-                city={property.city}
-                email={property.email}
-              />
+            <PropertyCard key={property._id} {...property} />
           ))}
         </div>
       )}
