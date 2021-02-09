@@ -32,19 +32,22 @@ const Properties = () => {
     <div className="properties">
       <h2>Properties</h2>
       {errorMessage && <Alert message={errorMessage} success={false} />}
-      {properties &&
-        properties.map((property) => (
-          <PropertyCard
-            key={property._id}
-            title={property.title}
-            type={property.type}
-            bedrooms={property.bedrooms}
-            bathrooms={property.bathrooms}
-            price={property.price}
-            city={property.city}
-            email={property.email}
-          />
-        ))}
+      {properties && (
+        <div className="properties-grid">
+          {properties.map((property) => (
+              <PropertyCard
+                key={property._id}
+                title={property.title}
+                type={property.type}
+                bedrooms={property.bedrooms}
+                bathrooms={property.bathrooms}
+                price={property.price}
+                city={property.city}
+                email={property.email}
+              />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
