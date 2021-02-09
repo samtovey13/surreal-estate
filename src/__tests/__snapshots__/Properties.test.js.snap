@@ -253,10 +253,15 @@ exports[`Properties renders error message following a 404 response 1`] = `
       Properties
     </h2>
     <div
-      class="properties-error-message"
-      data-testid="properties-error-message"
+      class="alert-container"
     >
-      Oops! Something went wrong. Cannot get properties.
+      <div
+        class="alert"
+        data-testid="alert"
+        style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
+      >
+        Oops! Something went wrong. Cannot get properties.
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -271,10 +276,15 @@ exports[`Properties renders error message following a bad API request 1`] = `
       Properties
     </h2>
     <div
-      class="properties-error-message"
-      data-testid="properties-error-message"
+      class="alert-container"
     >
-      Oops! Something went wrong. Cannot get properties.
+      <div
+        class="alert"
+        data-testid="alert"
+        style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
+      >
+        Oops! Something went wrong. Cannot get properties.
+      </div>
     </div>
   </div>
 </DocumentFragment>

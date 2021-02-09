@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Properties.css";
 import PropertyCard from "./PropertyCard";
+import Alert from "./Alert";
 import getProperties from "../requests/getProperties";
 
 const Properties = () => {
@@ -30,14 +31,7 @@ const Properties = () => {
   return (
     <div className="properties">
       <h2>Properties</h2>
-      {errorMessage && (
-        <div
-          className="properties-error-message"
-          data-testid="properties-error-message"
-        >
-          {errorMessage}
-        </div>
-      )}
+      {errorMessage && <Alert message={errorMessage} success={false} />}
       {properties &&
         properties.map((property) => (
           <PropertyCard

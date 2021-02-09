@@ -60,7 +60,7 @@ describe("Properties", () => {
     );
     await waitFor(() =>
       expect(getByText(/Oops! Something went wrong/i)).toHaveClass(
-        "properties-error-message"
+        "alert"
       )
     );
     expect(queryByTestId("property-card")).not.toBeInTheDocument();
@@ -73,7 +73,7 @@ describe("Properties", () => {
     const { asFragment, getByText, queryByTestId } = render(<Properties />);
     await waitFor(() =>
       expect(getByText(/Oops! Something went wrong/i)).toHaveClass(
-        "properties-error-message"
+        "alert"
       )
     );
     expect(queryByTestId("property-card")).not.toBeInTheDocument();
