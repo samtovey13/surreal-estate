@@ -19,7 +19,7 @@ const PropertyCard = ({
   email,
 }) => {
   return (
-    <div className="property-card">
+    <div className="property-card" data-testid="property-card">
       <div className="prop-card-title">
         <h4>{title}</h4>
       </div>

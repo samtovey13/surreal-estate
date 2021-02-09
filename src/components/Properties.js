@@ -13,7 +13,6 @@ const Properties = () => {
         const res = await getProperties();
         if (res.status === 200) {
          const data = res.data;
-         console.log(data);
          setErrorMessage("");
          setProperties(data);
         } else {
@@ -28,27 +27,32 @@ const Properties = () => {
     loadProperties();
   }, [] )
 
-  return <div className="properties">
-    <h2>Properties</h2>
-    {
-      errorMessage && (<div className="properties-error-message">{errorMessage}</div>)
-    }
-    {
-      properties && (properties.map((property) =>
-        (<PropertyCard
-          key={property._id}
-          title={property.title}
-          type={property.type}
-          bedrooms={property.bedrooms}
-          bathrooms={property.bathrooms}
-          price={property.price}
-          city={property.city}
-          email={property.email}
-        />)
-      ))
-    }
-  
-  </div>;
+  return (
+    <div className="properties">
+      <h2>Properties</h2>
+      {errorMessage && (
+        <div
+          className="properties-error-message"
+          data-testid="properties-error-message"
+        >
+          {errorMessage}
+        </div>
+      )}
+      {properties &&
+        properties.map((property) => (
+          <PropertyCard
+            key={property._id}
+            title={property.title}
+            type={property.type}
+            bedrooms={property.bedrooms}
+            bathrooms={property.bathrooms}
+            price={property.price}
+            city={property.city}
+            email={property.email}
+          />
+        ))}
+    </div>
+  );
 };
 
 export default Properties;

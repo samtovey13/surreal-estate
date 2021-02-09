@@ -1,3 +1,281 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Properties renders correctly 1`] = `[Function]`;
+exports[`Properties renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="properties"
+  >
+    <h2>
+      Properties
+    </h2>
+    <div
+      class="property-card"
+      data-testid="property-card"
+    >
+      <div
+        class="prop-card-title"
+      >
+        <h4>
+          Brand new amazing apartment
+        </h4>
+      </div>
+      <div
+        class="prop-card-type-and-city"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-map-marker-alt fa-w-12 "
+          data-icon="map-marker-alt"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 384 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+            fill="currentColor"
+          />
+        </svg>
+        Flat, Leeds
+      </div>
+      <div
+        class="prop-card-bedrooms"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-bed fa-w-20 "
+          data-icon="bed"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 640 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M176 256c44.11 0 80-35.89 80-80s-35.89-80-80-80-80 35.89-80 80 35.89 80 80 80zm352-128H304c-8.84 0-16 7.16-16 16v144H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v352c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-48h512v48c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V240c0-61.86-50.14-112-112-112z"
+            fill="currentColor"
+          />
+        </svg>
+        2
+      </div>
+      <div
+        class="prop-card-bathrooms"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-bath fa-w-16 "
+          data-icon="bath"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32,384a95.4,95.4,0,0,0,32,71.09V496a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V480H384v16a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V455.09A95.4,95.4,0,0,0,480,384V336H32ZM496,256H80V69.25a21.26,21.26,0,0,1,36.28-15l19.27,19.26c-13.13,29.88-7.61,59.11,8.62,79.73l-.17.17A16,16,0,0,0,144,176l11.31,11.31a16,16,0,0,0,22.63,0L283.31,81.94a16,16,0,0,0,0-22.63L272,48a16,16,0,0,0-22.62,0l-.17.17c-20.62-16.23-49.83-21.75-79.73-8.62L150.22,20.28A69.25,69.25,0,0,0,32,69.25V256H16A16,16,0,0,0,0,272v16a16,16,0,0,0,16,16H496a16,16,0,0,0,16-16V272A16,16,0,0,0,496,256Z"
+            fill="currentColor"
+          />
+        </svg>
+        1
+      </div>
+      <div
+        class="prop-card-price"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-pound-sign fa-w-10 "
+          data-icon="pound-sign"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 320 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M308 352h-45.495c-6.627 0-12 5.373-12 12v50.848H128V288h84c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-84v-63.556c0-32.266 24.562-57.086 61.792-57.086 23.658 0 45.878 11.505 57.652 18.849 5.151 3.213 11.888 2.051 15.688-2.685l28.493-35.513c4.233-5.276 3.279-13.005-2.119-17.081C273.124 54.56 236.576 32 187.931 32 106.026 32 48 84.742 48 157.961V224H20c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h28v128H12c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h296c6.627 0 12-5.373 12-12V364c0-6.627-5.373-12-12-12z"
+            fill="currentColor"
+          />
+        </svg>
+        200,000
+      </div>
+      <a
+        href="mailto:leedsproperty@gmail.com"
+      >
+        <div
+          class="prop-card-email"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-envelope fa-w-16 "
+            data-icon="envelope"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+              fill="currentColor"
+            />
+          </svg>
+          Enquire
+        </div>
+      </a>
+    </div>
+    <div
+      class="property-card"
+      data-testid="property-card"
+    >
+      <div
+        class="prop-card-title"
+      >
+        <h4>
+          Rose Cottage
+        </h4>
+      </div>
+      <div
+        class="prop-card-type-and-city"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-map-marker-alt fa-w-12 "
+          data-icon="map-marker-alt"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 384 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+            fill="currentColor"
+          />
+        </svg>
+        Cottage, Manchester
+      </div>
+      <div
+        class="prop-card-bedrooms"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-bed fa-w-20 "
+          data-icon="bed"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 640 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M176 256c44.11 0 80-35.89 80-80s-35.89-80-80-80-80 35.89-80 80 35.89 80 80 80zm352-128H304c-8.84 0-16 7.16-16 16v144H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v352c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-48h512v48c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V240c0-61.86-50.14-112-112-112z"
+            fill="currentColor"
+          />
+        </svg>
+        4
+      </div>
+      <div
+        class="prop-card-bathrooms"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-bath fa-w-16 "
+          data-icon="bath"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32,384a95.4,95.4,0,0,0,32,71.09V496a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V480H384v16a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V455.09A95.4,95.4,0,0,0,480,384V336H32ZM496,256H80V69.25a21.26,21.26,0,0,1,36.28-15l19.27,19.26c-13.13,29.88-7.61,59.11,8.62,79.73l-.17.17A16,16,0,0,0,144,176l11.31,11.31a16,16,0,0,0,22.63,0L283.31,81.94a16,16,0,0,0,0-22.63L272,48a16,16,0,0,0-22.62,0l-.17.17c-20.62-16.23-49.83-21.75-79.73-8.62L150.22,20.28A69.25,69.25,0,0,0,32,69.25V256H16A16,16,0,0,0,0,272v16a16,16,0,0,0,16,16H496a16,16,0,0,0,16-16V272A16,16,0,0,0,496,256Z"
+            fill="currentColor"
+          />
+        </svg>
+        2
+      </div>
+      <div
+        class="prop-card-price"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-pound-sign fa-w-10 "
+          data-icon="pound-sign"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 320 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M308 352h-45.495c-6.627 0-12 5.373-12 12v50.848H128V288h84c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-84v-63.556c0-32.266 24.562-57.086 61.792-57.086 23.658 0 45.878 11.505 57.652 18.849 5.151 3.213 11.888 2.051 15.688-2.685l28.493-35.513c4.233-5.276 3.279-13.005-2.119-17.081C273.124 54.56 236.576 32 187.931 32 106.026 32 48 84.742 48 157.961V224H20c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h28v128H12c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h296c6.627 0 12-5.373 12-12V364c0-6.627-5.373-12-12-12z"
+            fill="currentColor"
+          />
+        </svg>
+        350,000
+      </div>
+      <a
+        href="mailto:rose@cottages.co.uk"
+      >
+        <div
+          class="prop-card-email"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-envelope fa-w-16 "
+            data-icon="envelope"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+              fill="currentColor"
+            />
+          </svg>
+          Enquire
+        </div>
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Properties renders error message following a 404 response 1`] = `
+<DocumentFragment>
+  <div
+    class="properties"
+  >
+    <h2>
+      Properties
+    </h2>
+    <div
+      class="properties-error-message"
+      data-testid="properties-error-message"
+    >
+      Oops! Something went wrong. Cannot get properties.
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Properties renders error message following a bad API request 1`] = `
+<DocumentFragment>
+  <div
+    class="properties"
+  >
+    <h2>
+      Properties
+    </h2>
+    <div
+      class="properties-error-message"
+      data-testid="properties-error-message"
+    >
+      Oops! Something went wrong. Cannot get properties.
+    </div>
+  </div>
+</DocumentFragment>
+`;
