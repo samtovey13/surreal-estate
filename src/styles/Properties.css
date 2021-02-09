@@ -1,10 +1,29 @@
 .properties {
   margin: 0;
   padding: 20px;
+  display: grid;
+  grid-template-areas: 
+    "side-bar"
+    "title"
+    "properties-grid";
+}
+
+.properties h2 {
+  grid-area: "title";
 }
 
 .properties-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
+  grid-area: properties-grid;
+}
+
+@media screen and (min-width: 700px) {
+  .properties {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "sidebar title"
+      "sidebar properties-grid";
+  }
 }
