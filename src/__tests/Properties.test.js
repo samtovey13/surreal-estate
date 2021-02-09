@@ -1,7 +1,5 @@
 import { render, waitFor } from "@testing-library/react";
 import Properties from "../components/Properties";
-import { act } from "react-dom/test-utils";
-
 
 import getProperties from "../requests/getProperties";
 jest.mock("../requests/getProperties");
