@@ -1,6 +1,6 @@
 .properties {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   display: grid;
   grid-template-areas: 
     "side-bar"
@@ -9,11 +9,13 @@
 }
 
 .properties h2 {
-  grid-area: "title";
+  grid-area: title;
+  padding: 20px;
 }
 
 .properties-grid {
   display: grid;
+  padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
   grid-area: properties-grid;
@@ -23,7 +25,7 @@
   .properties {
     grid-template-columns: 200px 1fr;
     grid-template-areas:
-      "sidebar title"
-      "sidebar properties-grid";
+      "side-bar title"
+      "side-bar properties-grid";
   }
 }

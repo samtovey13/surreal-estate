@@ -35,7 +35,11 @@ const Properties = () => {
 
   if (properties) return (
     <div className="properties">
-      <Sidebar />
+      <Sidebar
+        setProperties={setProperties}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
+      />
       <h2>Properties</h2>
       <div className="properties-grid">
         {properties.map((property) => (
