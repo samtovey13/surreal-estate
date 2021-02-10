@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import "../styles/Properties.css";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
@@ -9,25 +9,22 @@ const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
-  useEffect(() => {
-    async function loadProperties () {
-      try {
-        const res = await getProperties();
-        if (res.status === 200) {
-         const data = res.data;
-         setErrorMessage("");
-         setProperties(data);
-        } else {
-          setProperties([]);
-          setErrorMessage("Oops! Something went wrong. Cannot get properties.");
-        }
-      } catch (err) {
+  const loadProperties = useCallback(async (query) => {
+    try {
+      const res = await getProperties(query);
+      if (res.status === 200) {
+        const data = res.data;
+        setErrorMessage("");
+        setProperties(data);
+      } else {
         setProperties([]);
         setErrorMessage("Oops! Something went wrong. Cannot get properties.");
-      } 
-    }
-    loadProperties();
-  }, [] )
+      }
+    } catch (err) {
+      setProperties([]);
+      setErrorMessage("Oops! Something went wrong. Cannot get properties.");
+    } 
+  }, []);
 
   if (errorMessage) return(
     <Alert message={errorMessage} success={false} />
@@ -36,9 +33,7 @@ const Properties = () => {
   if (properties) return (
     <div className="properties">
       <Sidebar
-        setProperties={setProperties}
-        errorMessage={errorMessage}
-        setErrorMessage={setErrorMessage}
+        loadProperties={loadProperties}
       />
       <h2>Properties</h2>
       <div className="properties-grid">

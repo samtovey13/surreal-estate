@@ -9,12 +9,8 @@ import {
   faFilter,
   faPoundSign,
 } from "@fortawesome/free-solid-svg-icons";
-import getFilteredProperties from "../requests/getFilteredProperties";
-import Alert from './Alert';
 
-
-
-const Sidebar = ({ setProperties, errorMessage, setErrorMessage }) => {
+const Sidebar = ({ loadProperties }) => {
   const { search } = useLocation();
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
@@ -29,28 +25,8 @@ const Sidebar = ({ setProperties, errorMessage, setErrorMessage }) => {
   };
 
   useEffect(() => {
-    async function loadProperties() {
-      try {
-        const res = await getFilteredProperties(search);
-        if (res.status === 200) {
-          const data = res.data;
-          setErrorMessage("");
-          setProperties(data);
-        } else {
-          setProperties([]);
-          setErrorMessage(
-            "Oops! Something went wrong. Cannot get properties."
-          );
-        }
-      } catch (err) {
-        setProperties([]);
-        setErrorMessage("Oops! Something went wrong. Cannot get properties.");
-      }
-    }
-    loadProperties();
-  }, [search, setErrorMessage, setProperties]);
-
-  if (errorMessage) return <Alert message={errorMessage} success={false} />;
+    loadProperties(search);
+  }, [ search, loadProperties ])
 
   return (
     <div className="side-bar">
