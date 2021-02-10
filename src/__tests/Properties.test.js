@@ -1,4 +1,7 @@
 import { render, waitFor } from "@testing-library/react";
+import { createMemoryHistory } from "history";
+import { Router } from "react-router-dom";
+
 import Properties from "../components/Properties";
 
 import getProperties from "../requests/getProperties";
@@ -37,8 +40,11 @@ describe("Properties", () => {
   });
 
   it("renders correctly", async () => {
+    const history = createMemoryHistory();
     const { asFragment, getByText, queryByTestId, getAllByTestId } = render(
-      <Properties />
+      <Router history={history}>
+        <Properties history={history} />
+      </Router>
     );
     await waitFor(() =>
       expect(getByText("Brand new amazing apartment")).toBeInTheDocument()
@@ -55,8 +61,11 @@ describe("Properties", () => {
 
   it("renders error message following a bad API request", async () => {
     getProperties.mockResolvedValue(Promise.reject("error!"));
+    const history = createMemoryHistory();
     const { asFragment, getByText, queryByTestId } = render(
-      <Properties />
+      <Router history={history}>
+        <Properties />
+      </Router>
     );
     await waitFor(() =>
       expect(getByText(/Oops! Something went wrong/i)).toHaveClass(
@@ -70,7 +79,12 @@ describe("Properties", () => {
 
   it("renders error message following a 404 response", async () => {
     getProperties.mockResolvedValue({status: 404, data: {}, });
-    const { asFragment, getByText, queryByTestId } = render(<Properties />);
+    const history = createMemoryHistory();
+    const { asFragment, getByText, queryByTestId } = render(
+      <Router history={history}>
+        <Properties />
+      </Router>
+    );
     await waitFor(() =>
       expect(getByText(/Oops! Something went wrong/i)).toHaveClass(
         "alert"

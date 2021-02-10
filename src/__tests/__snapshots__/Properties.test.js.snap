@@ -5,6 +5,120 @@ exports[`Properties renders correctly 1`] = `
   <div
     class="properties"
   >
+    <div
+      class="side-bar"
+    >
+      <div
+        class="side-bar-cities"
+      >
+        <div
+          class="side-bar-link"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-filter fa-w-16 "
+            data-icon="filter"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <a
+          class="side-bar-link"
+          href="/?query={\\"city\\":\\"Manchester\\"}"
+        >
+          Manchester
+        </a>
+        <a
+          class="side-bar-link"
+          href="/?query={\\"city\\":\\"Leeds\\"}"
+        >
+          Leeds
+        </a>
+        <a
+          class="side-bar-link"
+          href="/?query={\\"city\\":\\"Sheffield\\"}"
+        >
+          Sheffield
+        </a>
+        <a
+          class="side-bar-link"
+          href="/?query={\\"city\\":\\"Liverpool\\"}"
+        >
+          Liverpool
+        </a>
+      </div>
+      <div
+        class="side-bar-sorters"
+      >
+        <a
+          class="side-bar-link"
+          href="/?sort={\\"price\\":1}"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-sort-up fa-w-10 "
+            data-icon="sort-up"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+        <div
+          class="side-bar-link"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-pound-sign fa-w-10 "
+            data-icon="pound-sign"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M308 352h-45.495c-6.627 0-12 5.373-12 12v50.848H128V288h84c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-84v-63.556c0-32.266 24.562-57.086 61.792-57.086 23.658 0 45.878 11.505 57.652 18.849 5.151 3.213 11.888 2.051 15.688-2.685l28.493-35.513c4.233-5.276 3.279-13.005-2.119-17.081C273.124 54.56 236.576 32 187.931 32 106.026 32 48 84.742 48 157.961V224H20c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h28v128H12c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h296c6.627 0 12-5.373 12-12V364c0-6.627-5.373-12-12-12z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+        <a
+          class="side-bar-link"
+          href="/?sort={\\"price\\":-1}"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-sort-down fa-w-10 "
+            data-icon="sort-down"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
     <h2>
       Properties
     </h2>
@@ -251,25 +365,15 @@ exports[`Properties renders correctly 1`] = `
 exports[`Properties renders error message following a 404 response 1`] = `
 <DocumentFragment>
   <div
-    class="properties"
+    class="alert-container"
   >
-    <h2>
-      Properties
-    </h2>
     <div
-      class="alert-container"
+      class="alert"
+      data-testid="alert"
+      style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
     >
-      <div
-        class="alert"
-        data-testid="alert"
-        style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
-      >
-        Oops! Something went wrong. Cannot get properties.
-      </div>
+      Oops! Something went wrong. Cannot get properties.
     </div>
-    <div
-      class="properties-grid"
-    />
   </div>
 </DocumentFragment>
 `;
@@ -277,25 +381,15 @@ exports[`Properties renders error message following a 404 response 1`] = `
 exports[`Properties renders error message following a bad API request 1`] = `
 <DocumentFragment>
   <div
-    class="properties"
+    class="alert-container"
   >
-    <h2>
-      Properties
-    </h2>
     <div
-      class="alert-container"
+      class="alert"
+      data-testid="alert"
+      style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
     >
-      <div
-        class="alert"
-        data-testid="alert"
-        style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
-      >
-        Oops! Something went wrong. Cannot get properties.
-      </div>
+      Oops! Something went wrong. Cannot get properties.
     </div>
-    <div
-      class="properties-grid"
-    />
   </div>
 </DocumentFragment>
 `;
