@@ -9,14 +9,16 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Properties />
-        </Route>
-        <Route exact path="/add-property">
-          <AddProperty />
-        </Route>
-      </Switch>
+      <div className="main-content">
+        <Switch>
+          <Route exact path="/">
+            <Properties />
+          </Route>
+          <Route exact path="/add-property">
+            <AddProperty />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,9 @@
 .properties {
   margin: 0;
   padding: 0;
+  height: 100%;
   display: grid;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
     "side-bar"
     "title"
@@ -17,6 +19,7 @@
   display: grid;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: min-content;
   gap: 10px;
   grid-area: properties-grid;
 }

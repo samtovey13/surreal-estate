@@ -12,3 +12,9 @@ body {
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
 }
+
+.App {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+}
