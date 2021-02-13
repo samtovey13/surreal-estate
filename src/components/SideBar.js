@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import qs from "qs";
 import "../styles/SideBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,15 +8,23 @@ import {
   faSortDown,
   faFilter,
   faPoundSign,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = ({ loadProperties }) => {
+
   const { search } = useLocation();
+  const history = useHistory();
+  const [searchText, setSearchText] = useState("");
+  
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || '{}'),
+        ...valueObj,
+      }),
     };
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,
@@ -24,12 +32,36 @@ const Sidebar = ({ loadProperties }) => {
     });
   };
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const queryString = buildQueryString("query", {
+      title: { $regex: searchText, $options: 'i' },
+    });
+    history.push(queryString);
+  }
+
   useEffect(() => {
     loadProperties(search);
   }, [ search, loadProperties ])
 
   return (
     <div className="side-bar">
+
+      <form className="search-form" onSubmit={handleSearch}>
+        <input
+          className="search-input"
+          placeholder="Search"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <button
+          className="search-button"
+          type="submit"
+        >
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
+      </form>
+
       <div className="side-bar-cities">
         <div className="side-bar-link">
           <FontAwesomeIcon icon={faFilter} />
