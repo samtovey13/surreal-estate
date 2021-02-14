@@ -13,6 +13,7 @@
 .properties h2 {
   grid-area: title;
   padding: 20px;
+  font-weight: 500;
 }
 
 .properties-grid {

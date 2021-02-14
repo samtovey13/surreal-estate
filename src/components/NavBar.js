@@ -2,39 +2,38 @@ import React from "react";
 import '../styles/NavBar.css';
 import logo from '../images/logo.png';
 import { Link } from "react-router-dom";
-import FacebookLogin from "react-facebook-login";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 const NavBar = ({ onLogin, userId, onLogout }) => {
   return (
     <div className="navbar">
       <div className="header-flex-container">
         <div className="header">
-          <img className="logo" src={logo} alt="logo" width="80" height="100" />
+          <img className="logo" src={logo} alt="logo" width="40" height="50" />
           <h1 className="header-name">Surreal Estate</h1>
         </div>
-        <div className="login-container">
           {userId && (
-            (
-            (
             <button className="logout-button" onClick={onLogout}>
-              
-              
-              Sign Out
-            
-            
+              <FontAwesomeIcon icon={faFacebook} className="facebook-logout-icon" />
+              <p className="facebook-button-text">Sign Out</p>
             </button>
-          )
-          )
           )}
           {!userId && (
             <FacebookLogin
               appId="298673424934631"
-              autoLoad={true}
+              autoLoad={false}
               fields="name,email,picture"
               callback={onLogin}
+              render={(renderProps) => (
+                <button className="login-button" onClick={renderProps.onClick}>
+                  <FontAwesomeIcon icon={faFacebook} className="facebook-login-icon"/>
+                  <p className="facebook-button-text">Login</p>
+                </button>
+              )}
             />
           )}
-        </div>
       </div>
       <ul className="navbar-links">
         <li className="navbar-links-item">
