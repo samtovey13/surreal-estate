@@ -7,7 +7,7 @@ import AddProperty from "./AddProperty";
 
 function App() {
 
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState("5678");
 
   const handleLogin = (response) => {
     setUserId(response.id);
@@ -24,7 +24,7 @@ function App() {
       <div className="main-content">
         <Switch>
           <Route exact path="/">
-            <Properties />
+            <Properties userId={userId}/>
           </Route>
           <Route exact path="/add-property">
             <AddProperty />

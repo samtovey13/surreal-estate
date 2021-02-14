@@ -18,14 +18,23 @@ h4 {
   padding: 5px 10px;
 }
 
-.prop-card-email {
-  background-color: rgb(101, 45, 101);
+.prop-card-email, .prop-card-favourite-button {
   width: 100%;
   margin: 20px 0 0 0;
   padding: 10px 0;
   text-align: center;
-  color: whitesmoke;
   border-radius: 4px;
+  font-size: 16px;
+}
+
+.prop-card-email {
+  background-color: rgb(101, 45, 101);
+  color: whitesmoke;
+}
+.prop-card-favourite-button {
+  background-color: whitesmoke;
+  color: rgb(101, 45, 101);
+  border: 1px solid rgb(101, 45, 101);
 }
 
 a:link, a:visited {
@@ -36,6 +45,18 @@ a:link, a:visited {
 .prop-card-email:hover {
   background-color:rgb(51, 51, 51);
   font-weight: 800;
+}
+
+.prop-card-favourite-button:hover {
+  background-color: thistle;
+  font-weight: 800;
+}
+.prop-card-favourite-button:disabled {
+  background-color: whitesmoke;
+  font-weight: 600;
+  color:rgb(89, 89, 89);
+  border-color: rgb(89, 89, 89);
+  background-color: rgb(189, 189, 189);
 }
 
 svg {

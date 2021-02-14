@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import addFavourite from '../requests/addFavourite';
 import "../styles/PropertyCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,6 +8,8 @@ import {
   faEnvelope,
   faMapMarkerAlt,
   faPoundSign,
+  faHeart,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 const PropertyCard = ({
@@ -17,7 +20,26 @@ const PropertyCard = ({
   price,
   city,
   email,
+  propertyId,
+  userId,
 }) => {
+
+const [ saved, setSaved ] = useState(false);
+
+const handleSaveFavourite = async (event) => {
+  event.preventDefault();
+  try {
+      const res = await addFavourite(propertyId, userId);
+      if (res.status === 201) {
+        setSaved(true);
+      } else {
+        alert("Sorry, property couldn't be saved");
+      }
+    } catch (err) {
+        alert("Sorry, property couldn't be saved");
+    }
+}
+
   return (
     <div className="property-card" data-testid="property-card">
       <div className="prop-card-title">
@@ -45,6 +67,19 @@ const PropertyCard = ({
           Enquire
         </div>
       </a>
+      {userId && (
+        <button
+          type="button"
+          className="prop-card-favourite-button"
+          onClick={handleSaveFavourite}
+          disabled={saved}
+        >
+          {
+            !saved ? <><FontAwesomeIcon icon={faHeart} />Save</> 
+              : <><FontAwesomeIcon icon={faCheck} /> Saved</>
+          }
+        </button>
+      )}
     </div>
   );
 };

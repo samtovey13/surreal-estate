@@ -5,7 +5,7 @@ import Alert from "./Alert";
 import getProperties from "../requests/getProperties";
 import Sidebar from "./SideBar";
 
-const Properties = () => {
+const Properties = ({userId}) => {
   const [properties, setProperties] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -38,7 +38,7 @@ const Properties = () => {
       <h2>Properties</h2>
       <div className="properties-grid">
         {properties.map((property) => (
-          <PropertyCard key={property._id} {...property} />
+          <PropertyCard key={property._id} {...property} userId={userId} propertyId={property._id}/>
         ))}
       </div>
     </div>
