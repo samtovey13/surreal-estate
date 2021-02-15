@@ -4,10 +4,11 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from './NavBar';
 import Properties from './Properties';
 import AddProperty from "./AddProperty";
+import Favourites from "./Favourites";
 
 function App() {
 
-  const [userId, setUserId] = useState("5678");
+  const [userId, setUserId] = useState("test");
 
   const handleLogin = (response) => {
     setUserId(response.id);
@@ -25,6 +26,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Properties userId={userId}/>
+          </Route>
+          <Route exact path="/favourites">
+            <Favourites />
           </Route>
           <Route exact path="/add-property">
             <AddProperty />

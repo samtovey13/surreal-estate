@@ -14,31 +14,42 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
           <img className="logo" src={logo} alt="logo" width="40" height="50" />
           <h1 className="header-name">Surreal Estate</h1>
         </div>
-          {userId && (
-            <button className="logout-button" onClick={onLogout}>
-              <FontAwesomeIcon icon={faFacebook} className="facebook-logout-icon" />
-              <p className="facebook-button-text">Sign Out</p>
-            </button>
-          )}
-          {!userId && (
-            <FacebookLogin
-              appId="298673424934631"
-              autoLoad={false}
-              fields="name,email,picture"
-              callback={onLogin}
-              render={(renderProps) => (
-                <button className="login-button" onClick={renderProps.onClick}>
-                  <FontAwesomeIcon icon={faFacebook} className="facebook-login-icon"/>
-                  <p className="facebook-button-text">Login</p>
-                </button>
-              )}
+        {userId && (
+          <button className="logout-button" onClick={onLogout}>
+            <FontAwesomeIcon
+              icon={faFacebook}
+              className="facebook-logout-icon"
             />
-          )}
+            <p className="facebook-button-text">Sign Out</p>
+          </button>
+        )}
+        {!userId && (
+          <FacebookLogin
+            appId="298673424934631"
+            autoLoad={false}
+            fields="name,email,picture"
+            callback={onLogin}
+            render={(renderProps) => (
+              <button className="login-button" onClick={renderProps.onClick}>
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className="facebook-login-icon"
+                />
+                <p className="facebook-button-text">Login</p>
+              </button>
+            )}
+          />
+        )}
       </div>
       <ul className="navbar-links">
         <li className="navbar-links-item">
           <Link to="/">View Properties</Link>
         </li>
+        {userId && (
+          <li className="navbar-links-item">
+            <Link to="/favourites">My Favourites</Link>
+          </li>
+        )}
         <li className="navbar-links-item">
           <Link to="/add-property">Add a Property</Link>
         </li>
