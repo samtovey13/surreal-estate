@@ -8,7 +8,7 @@ import Favourites from "./Favourites";
 
 function App() {
 
-  const [userId, setUserId] = useState("test");
+  const [userId, setUserId] = useState("123");
 
   const handleLogin = (response) => {
     setUserId(response.id);
