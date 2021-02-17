@@ -2,6 +2,9 @@ import React, { useState, useCallback, useEffect } from "react";
 import Alert from "./Alert";
 import getFavourites from "../requests/getFavourites";
 import deleteFavouriteById from '../requests/deleteFavouriteById'
+import '../styles/Favourites.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Favourites = ({userId}) => {
   const [favourites, setFavourites] = useState([]);
@@ -52,6 +55,7 @@ const Favourites = ({userId}) => {
 
   return (
     <div className="favourites">
+      <div className="side-bar"></div>
       <h2>My Favourites</h2>
       <div className="favourites-grid">
         {favourites.map(favourite => {
@@ -59,7 +63,9 @@ const Favourites = ({userId}) => {
           return (
             <div className="favourite-card" key={property._id + favourite._id}>
               <h4>{property.title}</h4>
-              <button id={favourite._id} className="remove-favourite-button" onClick={handleRemoveFavourite}>Remove</button>
+              <button id={favourite._id} className="remove-favourite-button" onClick={handleRemoveFavourite}>
+                <FontAwesomeIcon icon={faTimes} />
+                </button>
             </div>
           );
         })
