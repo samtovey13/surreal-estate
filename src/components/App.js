@@ -25,10 +25,10 @@ function App() {
       <div className="main-content">
         <Switch>
           <Route exact path="/">
-            <Properties userId={userId}/>
+            <Properties userId={userId} />
           </Route>
           <Route exact path="/favourites">
-            <Favourites />
+            <Favourites userId={userId} />
           </Route>
           <Route exact path="/add-property">
             <AddProperty />
