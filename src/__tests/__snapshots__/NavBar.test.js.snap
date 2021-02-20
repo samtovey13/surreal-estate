@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly with no user 1`] = `
+<DocumentFragment>
+  <div
+    class="navbar"
+  >
+    <div
+      class="header-flex-container"
+    >
+      <div
+        class="header"
+      >
+        <img
+          alt="logo"
+          class="logo"
+          height="50"
+          src="logo.png"
+          width="40"
+        />
+        <h1
+          class="header-name"
+        >
+          Surreal Estate
+        </h1>
+      </div>
+      <div>
+        Facebook Login Button
+      </div>
+    </div>
+    <ul
+      class="navbar-links"
+    >
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href="/"
+        >
+          View Properties
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href="/add-property"
+        >
+          Add a Property
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`NavBar renders correctly with user logged in 1`] = `
+<DocumentFragment>
+  <div
+    class="navbar"
+  >
+    <div
+      class="header-flex-container"
+    >
+      <div
+        class="header"
+      >
+        <img
+          alt="logo"
+          class="logo"
+          height="50"
+          src="logo.png"
+          width="40"
+        />
+        <h1
+          class="header-name"
+        >
+          Surreal Estate
+        </h1>
+      </div>
+      <div>
+        Facebook Login Button
+      </div>
+    </div>
+    <ul
+      class="navbar-links"
+    >
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href="/"
+        >
+          View Properties
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href="/favourites"
+        >
+          My Favourites
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
+          href="/add-property"
+        >
+          Add a Property
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
