@@ -1,14 +1,17 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Alert from "./Alert";
+import PropertyCard from "./PropertyCard";
 import getFavourites from "../requests/getFavourites";
 import deleteFavouriteById from '../requests/deleteFavouriteById'
 import '../styles/Favourites.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Favourites = ({userId}) => {
   const [favourites, setFavourites] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+  const [popupProperty, setPopupProperty] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
 
   const loadFavourites = useCallback(async (query) => {
     try {
@@ -27,10 +30,8 @@ const Favourites = ({userId}) => {
     }
   }, []);
 
-  const handleRemoveFavourite = async (event) => {
-    event.preventDefault();
+  const handleRemoveFavourite = async (favourite) => {
     const query = JSON.stringify({ fbUserId: userId });
-    const favourite = event.target.id;
     try {
       const res = await deleteFavouriteById(favourite, query);
       if (res.status === 204) {
@@ -46,6 +47,16 @@ const Favourites = ({userId}) => {
     }
   }
 
+  const handleViewPopup = (property) => {
+    setPopupProperty(property);
+    setShowPopup(true);
+  }
+
+  const handleClosePopup = () => {
+    setPopupProperty({});
+    setShowPopup(false);
+  }
+
   useEffect(() => {
     const query = JSON.stringify({fbUserId: userId });
     loadFavourites(query);
@@ -54,24 +65,48 @@ const Favourites = ({userId}) => {
   if (errorMessage) return <Alert message={errorMessage} success={false} />;
 
   return (
+    <>
     <div className="favourites">
       <div className="side-bar"></div>
       <h2>My Favourites</h2>
       <div className="favourites-grid">
-        {favourites.map(favourite => {
+        {(favourites.length > 0 ) ? (favourites.map(favourite => {
           const property = favourite.propertyListing;
           return (
             <div className="favourite-card" key={property._id + favourite._id}>
-              <h4>{property.title}</h4>
-              <button id={favourite._id} className="remove-favourite-button" onClick={handleRemoveFavourite}>
-                <FontAwesomeIcon icon={faTimes} />
-                </button>
+              <button
+                type="button"
+                className="view-popup-button"
+                onClick={(e) => handleViewPopup(property)}
+              >
+                <h4>{property.title}</h4>
+              </button>
+              <button
+                id={favourite._id}
+                className="remove-favourite-button"
+                onClick={(e) => handleRemoveFavourite(favourite._id)}
+              >
+                <FontAwesomeIcon icon={faTrashAlt} />
+              </button>
             </div>
           );
-        })
-        }
-      </div>
+        })) : (<Alert message="No favourites to show" />)
+      }
+      </div> 
     </div>
+    {
+      showPopup && popupProperty &&
+        <div className="popup-wrapper">
+          <div className="popup-inner">
+            <PropertyCard {...popupProperty} />
+            <button className="close-popup-button" onClick={handleClosePopup} >
+              <FontAwesomeIcon icon={faTimes} />
+              Close
+              </button>
+          </div>
+        </div>
+    }
+    </>
   );
 };
 
