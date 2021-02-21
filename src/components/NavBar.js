@@ -8,10 +8,19 @@ const NavBar = ({ onLogin, userId, onLogout }) => {
   return (
     <div className="navbar">
       <div className="header-flex-container">
-        <div className="header">
-          <img className="logo" src={logo} alt="logo" width="40" height="50" />
-          <h1 className="header-name">Surreal Estate</h1>
-        </div>
+        <Link to="/">
+          <div className="header">
+            <img
+              className="logo"
+              src={logo}
+              alt="logo"
+              width="40"
+              height="50"
+            />
+            <h1 className="header-name">Surreal Estate</h1>
+          </div>
+        </Link>
+
         <FacebookLoginButton
           onLogin={onLogin}
           userId={userId}
