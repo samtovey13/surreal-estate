@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "../styles/AddProperty.css";
-import createProperty from "../requests/createProperty";
+import {createProperty} from "../requests/index";
 
 import Alert from './Alert';
 import AddPropertyForm from './AddPropertyForm';

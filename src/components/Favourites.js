@@ -1,8 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Alert from "./Alert";
 import PropertyCard from "./PropertyCard";
-import getFavourites from "../requests/getFavourites";
-import deleteFavouriteById from '../requests/deleteFavouriteById'
+import {getFavourites, deleteFavouriteById} from "../requests/index";
 import '../styles/Favourites.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faTrashAlt } from "@fortawesome/free-solid-svg-icons";

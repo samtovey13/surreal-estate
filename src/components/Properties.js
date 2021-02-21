@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import "../styles/Properties.css";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
-import getProperties from "../requests/getProperties";
+import {getProperties} from "../requests/index";
 import Sidebar from "./SideBar";
 
 const Properties = ({userId}) => {
