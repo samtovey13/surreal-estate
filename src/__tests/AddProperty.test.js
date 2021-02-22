@@ -1,8 +1,8 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import AddProperty from "../components/AddProperty";
 
-import createProperty from "../requests/createProperty";
-jest.mock("../requests/createProperty");
+import {createProperty} from "../requests/index";
+jest.mock("../requests/index");
 
 const mockData = {
   title: "Spacious City Apartment",

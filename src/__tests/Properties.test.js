@@ -4,8 +4,8 @@ import { Router } from "react-router-dom";
 
 import Properties from "../components/Properties";
 
-import getProperties from "../requests/getProperties";
-jest.mock("../requests/getProperties");
+import {getProperties} from "../requests/index";
+jest.mock("../requests/index");
 
 describe("Properties", () => {
 
