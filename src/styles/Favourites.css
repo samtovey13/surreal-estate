@@ -1,0 +1,115 @@
+.favourites {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: 
+    "side-bar"
+    "title"
+    "favourites-grid";
+}
+
+.favourites h2 {
+  padding: 20px;
+  font-weight: 500;
+  grid-area: title;
+}
+
+.favourites-grid {
+  display: grid;
+  padding: 20px;
+  grid-auto-rows: minmax(100px, max-content);
+  gap: 10px;
+  max-width: 1000px;
+  grid-area: favourites-grid;
+}
+
+.favourite-card {
+  height: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  border: 2px solid thistle;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: white;
+}
+
+.favourite-card h4 {
+  margin: 0;
+}
+.view-popup-button {
+  color: rgb(101, 45, 101);
+  border: none;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  flex: 1 1 auto;
+}
+
+.remove-favourite-button {
+  flex: 0 0 50px;
+  height: 50px;
+  text-align: center;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+  color: #de0000;
+  background-color: #ffc2c2;
+  border: 3px solid #de000091;
+}
+
+.remove-favourite-button svg, .view-popup-button svg {
+  margin: auto;
+}
+
+.close-popup-button {
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 10px;
+  color: rgb(101, 45, 101);
+  border: 3px solid rgb(101, 45, 101);
+  border-radius: 4px;
+}
+
+.popup-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-inner {
+  position: relative;
+  padding: 20px;
+  margin: auto;
+  margin-top: calc(50vh - 200px);
+  width: 70%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 700px) {
+  .favourites {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "side-bar title"
+      "side-bar favourites-grid";
+  }
+}

@@ -1,5 +1,11 @@
 .navbar {
   background-color: thistle;
+  background-image: 
+    linear-gradient( rgba(255, 255, 255, 0.392), black),
+    url("../images/navbar-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header-flex-container {
@@ -45,6 +51,8 @@ header {
 .navbar-links {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .navbar-links-item {

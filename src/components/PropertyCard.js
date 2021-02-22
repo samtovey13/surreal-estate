@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import addFavourite from '../requests/addFavourite';
+import {addFavourite} from '../requests/index';
 import "../styles/PropertyCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
