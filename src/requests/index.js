@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = "http://localhost:4000/api/v1";
+// Switch to localhost if using your own local version of the API //
+// const API = "http://localhost:4000/api/v1";
+const API = "https://surreal-estate-api-13.herokuapp.com/api/v1";
 
 const createProperty = async (fields) => {
   const response = await axios
