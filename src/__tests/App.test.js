@@ -1,7 +1,18 @@
 import { render } from '@testing-library/react';
+import { MemoryRouter } from "react-router-dom";
 import App from '../components/App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  expect(getByText("Surreal Estate")).toBeInTheDocument();
+jest.mock("../components/FacebookLoginButton", () => () => (
+  <div>Facebook Login Button</div>
+));
+
+describe("App", () => {
+  it("renders correctly", () => {
+    const { asFragment } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

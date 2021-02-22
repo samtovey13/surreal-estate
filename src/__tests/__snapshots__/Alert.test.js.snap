@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert does not render a message when message is empty 1`] = `<DocumentFragment />`;
+
+exports[`Alert renders a success message 1`] = `
+<DocumentFragment>
+  <div
+    class="alert-container"
+  >
+    <div
+      class="alert"
+      data-testid="alert"
+      style="color: rgb(0, 122, 51); border-color: #d3edd9;"
+    >
+      Success message
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Alert renders an error message 1`] = `
+<DocumentFragment>
+  <div
+    class="alert-container"
+  >
+    <div
+      class="alert"
+      data-testid="alert"
+      style="color: rgb(222, 0, 0); border-color: #ffc2c2;"
+    >
+      Error message
+    </div>
+  </div>
+</DocumentFragment>
+`;
