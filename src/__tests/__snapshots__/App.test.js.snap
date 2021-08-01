@@ -51,15 +51,6 @@ exports[`App renders correctly 1`] = `
           class="navbar-links-item"
         >
           <a
-            href="/favourites"
-          >
-            My Favourites
-          </a>
-        </li>
-        <li
-          class="navbar-links-item"
-        >
-          <a
             href="/add-property"
           >
             Add a Property

@@ -8,22 +8,26 @@ exports[`NavBar renders correctly with no user 1`] = `
     <div
       class="header-flex-container"
     >
-      <div
-        class="header"
+      <a
+        href="/"
       >
-        <img
-          alt="logo"
-          class="logo"
-          height="50"
-          src="logo.png"
-          width="40"
-        />
-        <h1
-          class="header-name"
+        <div
+          class="header"
         >
-          Surreal Estate
-        </h1>
-      </div>
+          <img
+            alt="logo"
+            class="logo"
+            height="50"
+            src="logo.png"
+            width="40"
+          />
+          <h1
+            class="header-name"
+          >
+            Surreal Estate
+          </h1>
+        </div>
+      </a>
       <div>
         Facebook Login Button
       </div>
@@ -62,22 +66,26 @@ exports[`NavBar renders correctly with user logged in 1`] = `
     <div
       class="header-flex-container"
     >
-      <div
-        class="header"
+      <a
+        href="/"
       >
-        <img
-          alt="logo"
-          class="logo"
-          height="50"
-          src="logo.png"
-          width="40"
-        />
-        <h1
-          class="header-name"
+        <div
+          class="header"
         >
-          Surreal Estate
-        </h1>
-      </div>
+          <img
+            alt="logo"
+            class="logo"
+            height="50"
+            src="logo.png"
+            width="40"
+          />
+          <h1
+            class="header-name"
+          >
+            Surreal Estate
+          </h1>
+        </div>
+      </a>
       <div>
         Facebook Login Button
       </div>
